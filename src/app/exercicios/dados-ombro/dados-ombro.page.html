@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button slot="start"></ion-back-button>
+    </ion-buttons>
+
+     <ion-title>Exercicios de Ombro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card *ngIf="ombro">
+    <ion-card-header>
+      <img [src]="ombro.imagem" style="align-self: center;">
+    </ion-card-header>
+    <ion-card-content>
+      <h1>{{ombro.nome}}</h1>
+      <h2>{{ombro.descricao}}</h2>
+    </ion-card-content>
+  </ion-card>

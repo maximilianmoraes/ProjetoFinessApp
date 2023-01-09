@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+     <ion-title>Exercicios de Biceps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card *ngIf="biceps">
+    <ion-card-header>
+      <img [src]="biceps.imagem" style="align-self: center;">
+    </ion-card-header>
+    <ion-card-content>
+      <h1>{{biceps.nome}}</h1>
+      <h2>{{biceps.descricao}}</h2>
+    </ion-card-content>
+  </ion-card>

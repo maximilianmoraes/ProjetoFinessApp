@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title> {{titulo}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+
+
+<ion-content [fullscreen]="true" color="dark" role="feed">
+  <ion-list>
+    <ion-card *ngFor="let musculo of listaMusculos" color="dark">
+      <ion-item lines="full" [routerLink]="musculo.pagina" color="dark">
+
+        <img [src]="musculo.imagem" />
+
+    </ion-item>
+    <ion-card-subtitle> <ion-button color="dark">{{musculo.nome}}</ion-button></ion-card-subtitle>
+</ion-card>
+</ion-list>
+</ion-content>

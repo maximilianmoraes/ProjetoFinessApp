@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Minha Informações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="info !== undefined">
+  <ion-list>
+    <ion-item>
+      <ion-input
+        type="text"
+        [(ngModel)]="info.name"
+        placeholder="Nome"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        type="text"
+        [(ngModel)]="info.age"
+        placeholder="Idade"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        type="text"
+        [(ngModel)]="info.peso"
+        placeholder="Peso"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        type="text"
+        [(ngModel)]="info.altura"
+        placeholder="Altura"
+      ></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-select
+          [(ngModel)]="info.nivel"
+          placeholder="Nivel"
+          [disabled]="!podeMudarTreino()"
+        >
+          <ion-select-option [ariaSelected]="!podeMudarTreino()" value="basico"
+            >Basico</ion-select-option
+          >
+          <ion-select-option value="intermediario"
+            >Intermediario</ion-select-option
+          >
+          <ion-select-option value="avancado">Avancado</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="info.genero" placeholder="Genero">
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="feminino">Feminino</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <div class="NaoPodeMudarTreino" *ngIf="!podeMudarTreino()" >
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <h1>
+      Atenção!
+    </h1>
+
+    <p>
+      Você só poderá alterar o nível de treino caso esteja com o imc
+      normalizado.
+    </p>
+
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="saveInfo()" expand="block"> Salvar </ion-button>
+  </ion-toolbar>
+</ion-footer>

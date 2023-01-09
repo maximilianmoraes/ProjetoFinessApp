@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "aplicativo-bfe91"
+  },
+  "targets": {
+    "aplicativo-bfe91": {
+      "hosting": {
+        "app": [
+          "aplicativo-bfe91"
+        ]
+      }
+    }
+  }
+}

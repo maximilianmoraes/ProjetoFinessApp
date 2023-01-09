@@ -1,0 +1,105 @@
+<ion-content>
+
+  <div class="container top">
+    <img src="/assets/icon/telameio.jfif">
+
+    <ion-segment (ionChange)="segmentChanged($event)" value="login">
+      <ion-segment-button value="login">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-label>Cadastro</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <ion-slides>
+  <ion-slide>
+    <div class="card">
+      <span>Login</span>
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-input type="email" placeholder="E-mail"[(ngModel)]="userLogin.email"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-input type="password" placeholder="Senha"[(ngModel)]="userLogin.password"></ion-input>
+      </ion-item>
+
+      <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+       Entrar
+     </ion-button>
+    </div>
+  </ion-slide>
+
+  <ion-slide>
+    <div class="card">
+      <span>Cadastro</span>
+
+      <ion-list class="listRegister">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" placeholder="E-mail"[(ngModel)]="userRegister.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" placeholder="Senha"[(ngModel)]="userRegister.password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirme sua senha</ion-label>
+          <ion-input type="password" placeholder="Senha"[(ngModel)]="cPassword"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input  [(ngModel)]="userRegister.name" type="text" placeholder="Digite seu nome"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Idade</ion-label>
+          <ion-input  [(ngModel)]="userRegister.age" type="number" placeholder="Digite sua idade"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Peso</ion-label>
+          <ion-input  [(ngModel)]="userRegister.peso" type="number" placeholder="Digite seu peso"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Altura</ion-label>
+          <ion-input  [(ngModel)]="userRegister.altura" type="number" placeholder="Digite sua altura"></ion-input>
+        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-select [(ngModel)]="userRegister.nivel" placeholder="Nivel">
+              <ion-select-option value="basico">Basico</ion-select-option>
+              <ion-select-option value="intermediario">Intermediario</ion-select-option>
+              <ion-select-option value="avancado">Avancado</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-select [(ngModel)]="userRegister.genero" placeholder="Genero">
+              <ion-select-option value="masculino">Masculino</ion-select-option>
+              <ion-select-option value="feminino">Feminino</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+
+      <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
+       Cadastrar
+     </ion-button>
+    </div>
+  </ion-slide>
+
+  </ion-slides>
+
+
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+      <span>ZFitness </span>
+    </div>
+  </div>
+
+</ion-content>

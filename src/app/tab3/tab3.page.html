@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title> Meu Perfil </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card-title>Seja Bem Vindo</ion-card-title>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Olá, {{(userInfo | async)?.name}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item-sliding>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <ion-label>Idade: {{(userInfo | async)?.age}} anos</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="scale-outline" slot="start"></ion-icon>
+            <ion-label>Peso: {{(userInfo | async)?.peso}} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="body-outline" slot="start"></ion-icon>
+            <ion-label>Altura: {{(userInfo | async)?.altura}} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>Genêro: {{(userInfo | async)?.genero}} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="speedometer-outline" slot="start"></ion-icon>
+            <ion-label
+              >Nivel Treinamento: {{(imc > 18.5 && imc <= 24.9) ? (userInfo | async)?.nivel : 'basico'}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="medkit-outline" slot="start"></ion-icon>
+            <ion-label>IMC: {{imc}} </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item-sliding>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <div class="imc-message">
+        {{msgImc}}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="logout()" color="danger" expand="block">
+            Sair
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-button routerLink="/usuario" expand="block"> Editar </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

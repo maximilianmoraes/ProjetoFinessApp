@@ -1,0 +1,30 @@
+  h1{
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  ion-avatar {
+    --border-radius: 0;
+}
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+  padding-inline: 2px;
+
+}
+ion-item{
+
+  --padding-start:5px;
+--inner-pading-end: 10px;
+
+
+ion-thumbnail{
+  height: 20%;
+  margin-inline-end: 10px;
+  width: 10%;
+}
+}
+.imc-message {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}

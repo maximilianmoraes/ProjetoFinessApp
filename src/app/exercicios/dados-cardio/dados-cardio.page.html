@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+     <ion-title>Informações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card *ngIf="cardio">
+    <ion-card-header>
+      <img [src]="cardio.imagem" style="align-self: center;">
+    </ion-card-header>
+    <ion-card-content>
+      <h1>{{cardio.nome}}</h1>
+      <h2>{{cardio.descricao}}</h2>
+    </ion-card-content>
+  </ion-card>

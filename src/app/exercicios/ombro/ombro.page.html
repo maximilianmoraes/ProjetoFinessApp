@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{titulo}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" color="light" role="feed">
+
+
+
+  <ion-list>
+    <ion-card *ngFor="let ombro of listaOmbro">
+      <ion-item lines="full" (click)="exibirMusculos(ombro)" color="light">
+        <ion-card-subtitle class="ion-text-wrap">{{ombro.nome}}</ion-card-subtitle>
+        <img [src]="ombro.imagem" />
+      </ion-item>
+
+</ion-card>
+
+</ion-list>
+</ion-content>

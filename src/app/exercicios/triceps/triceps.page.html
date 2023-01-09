@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+   <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title> {{titulo}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" color="light" role="feed">
+
+
+
+  <ion-list>
+    <ion-card *ngFor="let triceps of listaTriceps">
+      <ion-item lines="full" (click)="exibirMusculos(triceps)" color="light">
+        <ion-card-subtitle class="ion-text-wrap">{{triceps.nome}}</ion-card-subtitle>
+        <img [src]="triceps.imagem" />
+      </ion-item>
+
+</ion-card>
+
+</ion-list>
+</ion-content>

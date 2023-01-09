@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+     <ion-title>Exercicios de Posterior</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-card *ngIf="posterior">
+    <ion-card-header>
+      <img [src]="posterior.imagem" style="align-self: center;">
+    </ion-card-header>
+    <ion-card-content>
+      <h1>{{posterior.nome}}</h1>
+      <h2>{{posterior.descricao}}</h2>
+    </ion-card-content>
+  </ion-card>
